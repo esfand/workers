@@ -26,7 +26,7 @@ public class Enqueue {
         Client client = new Client(env.get("IRON_MQ_PROJECT_ID"), env.get("IRON_MQ_TOKEN"), Cloud.ironAWSUSEast);
 
         // Get a queue (if it doesn't exist, it will be created when you first post a message)
-        Queue queue = client.queue("queue101");
+        Queue queue = client.queue("testqueue");
                 
         try {
             // Post a message
@@ -43,6 +43,5 @@ public class Enqueue {
         } catch (IOException ex) {
             Logger.getLogger(Enqueue.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 }

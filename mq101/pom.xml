@@ -44,6 +44,7 @@
     </repositories>
     
     <build>
+        <finalName>mq101</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
