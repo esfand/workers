@@ -6,3 +6,5 @@
 *.ear
 /mq101/nbproject/private/
 /mq101/target/
+/jaxrs-json/target/
+/ironworker-java/target/
