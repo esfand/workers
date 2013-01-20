@@ -11,6 +11,7 @@
     <url>http://maven.apache.org</url>
     
     <build>
+        <finalName>worker101</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -22,6 +23,48 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+                       
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>            
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.webwarp.hub.App</mainClass>
+                    <!--arguments>
+                        <argument>argument1</argument>           
+                    </arguments-->
+                    <systemProperties>
+                        <systemProperty>
+                            <key>PORT</key>
+                            <value>"8888"</value>
+                        </systemProperty>            
+                    </systemProperties>
+                    <commandlineArgs>
+                        PORT=8888
+                    </commandlineArgs>
+                </configuration>
+            </plugin>                 
         </plugins>
     </build>
     
@@ -89,5 +132,5 @@
             </snapshots>
         </repository>        
     </repositories>
-    
+
 </project>

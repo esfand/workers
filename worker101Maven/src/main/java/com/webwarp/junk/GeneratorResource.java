@@ -1,11 +1,11 @@
-package org.glassfish.jsondemos.jaxrs;
+package com.webwarp.junk;
 
 import javax.json.Json;
 import javax.json.stream.JsonGenerator;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.StreamingOutput;
+//import javax.ws.rs.GET;
+//import javax.ws.rs.Path;
+//import javax.ws.rs.Produces;
+//import javax.ws.rs.core.StreamingOutput;
 import java.io.OutputStream;
 
 /**
@@ -13,19 +13,19 @@ import java.io.OutputStream;
  *
  * @author Jitendra Kotamraju
  */
-@Path("/generator")
+//@Path("/generator")
 public class GeneratorResource {
 
-    @GET
-    @Produces("application/json")
-    public StreamingOutput doGet() {
+//    @GET
+//    @Produces("application/json")
+/*    public StreamingOutput doGet() {
         return new StreamingOutput() {
             @Override
             public void write(OutputStream os) {
                 writeWikiExample(os);
             }
         };
-    }
+    } */
 
     // Writes wiki example JSON in a streaming fashion
     private void writeWikiExample(OutputStream os) {
